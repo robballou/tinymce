@@ -440,17 +440,47 @@
 			return "";
 		},
 
+    /*
+      Populate the media_type dropdown
+      
+      All types are now option based. You can turn on/off options in the editor configuration by
+      specifying one of the names below and true/false.
+    */
 		getMediaTypeHTML : function(editor) {
 			var html = "";
 			html += '<select id="media_type" name="media_type" onchange="Media.formToData(\'type\');">';
-			html += '<option value="video">HTML5 Video</option>';
-			html += '<option value="audio">HTML5 Audio</option>';
-			html += '<option value="flash">Flash</option>';
-			html += '<option value="quicktime">QuickTime</option>';
-			html += '<option value="shockwave">Shockwave</option>';
-			html += '<option value="windowsmedia">Windows Media</option>';
-			html += '<option value="realmedia">Real Media</option>';
-			html += '<option value="iframe">Iframe</option>';
+			
+			if (editor.getParam('media_html5_video', true)) {
+			  html += '<option value="video">HTML5 Video</option>';
+			}
+			
+			if (editor.getParam('media_html5_video', true)) {
+  			html += '<option value="audio">HTML5 Audio</option>';
+  		}
+  		
+  		if (editor.getParam('media_flash_video', true)) {
+  			html += '<option value="flash">Flash</option>';
+  		}
+  		
+  		if (editor.getParam('media_quicktime_video', true)) {
+  			html += '<option value="quicktime">QuickTime</option>';
+			}
+			
+			if (editor.getParam('media_shockwave_video', true)) {
+  			html += '<option value="shockwave">Shockwave</option>';
+			}
+			
+			if (editor.getParam('media_windowsmedia_video', true)) {
+			  html += '<option value="windowsmedia">Windows Media</option>';
+  		}
+  		
+  		if (editor.getParam('media_realmedia_video', true)) {
+  			html += '<option value="realmedia">Real Media</option>';
+			}
+			
+			if (editor.getParam('media_iframe_video', true)) {
+  			html += '<option value="iframe">Iframe</option>';
+			}
 
 			if (editor.getParam('media_embedded_audio', false)) {
 				html += '<option value="embeddedaudio">Embedded Audio</option>';
