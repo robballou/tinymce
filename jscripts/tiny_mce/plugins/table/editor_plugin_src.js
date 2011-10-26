@@ -1000,7 +1000,7 @@
 
 					var rng = ed.selection.getRng();
 					var n = ed.selection.getNode();
-					var currentCell = ed.dom.getParent(rng.startContainer, 'TD');
+					var currentCell = ed.dom.getParent(rng.startContainer, 'TD,TH');
 				
 					if (!tableCellSelected(ed, rng, n, currentCell))
 						return;
@@ -1224,6 +1224,7 @@
 					});
 
 					fixTableCaretPos();
+					ed.startContent = ed.getContent({format : 'raw'});
 				}
 			});
 

@@ -5,8 +5,10 @@
 (function(tinymce){
 	tinymce.VK = {
 		DELETE:46,
-		BACKSPACE:8
-		
+		BACKSPACE:8,
+		ENTER:13,
+		TAB:9,
+        	SPACEBAR:32
 	}
 
 })(tinymce);
