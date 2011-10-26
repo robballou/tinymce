@@ -329,6 +329,17 @@
 					setVal('src', src);
 					setVal('media_type', data.type);
 				}
+				
+				// SchoolTube
+				if (src.match(/schooltube.com\/video\/([^\/]+)\//)) {
+					data.width = 425;
+					data.height = 350;
+					data.params.frameborder = '0';
+					data.type = 'iframe';
+					src = 'http://www.schooltube.com/embed/' + src.match(/video\/([^\/]+)/)[1];
+					setVal('src', src);
+					setVal('media_type', data.type);
+				}
 
 				if (data.type == 'video') {
 					if (!data.video.sources)
